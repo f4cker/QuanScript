@@ -1,4 +1,5 @@
 # 2019.9.26
+DOMAIN-SUFFIX,app.iuczy.com,REJECT
 DOMAIN-SUFFIX,license.bluesoleil.com,REJECT
 DOMAIN-SUFFIX,license2.bluesoleil.com,REJECT
 DOMAIN-SUFFIX,license3.bluesoleil.com,REJECT
