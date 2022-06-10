@@ -1,0 +1,12 @@
+#!name=微信自动阅读
+#!desc=微信自动阅读薅羊毛
+#!author=Layoute
+#!homepage=https://github.com/f4cker
+#!manual=https://github.com/f4cker/QuanScript
+#!icon=https://images.macrumors.com/article-new/2019/07/ios_location_services-250x250.jpg
+
+[Script]
+http-response ^https?://mp\.weixin\.qq\.com/s.+? script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=1, tag=WeChat Auto Read, argument="</script>->setTimeout(()=>window.history.back(),6000); </script>"
+
+[MITM]
+hostname = mp.weixin.qq.com
