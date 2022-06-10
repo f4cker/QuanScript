@@ -36,7 +36,7 @@ console.log('response: ' + $response);
 console.log('argument: ' + $argument);
 
 if (typeof $argument == "undefined") {
-	$done();
+	$done({});
 } else {
 	let body;
 	if ($script.type === "http-response") {
@@ -44,7 +44,7 @@ if (typeof $argument == "undefined") {
 	} else if ($script.type === "http-request") {
 		body = $request.body;
 	} else {
-		$done();
+		$done({});
 	}
 	console.log('body: ' + body);
 	$argument.split("&").forEach((item) => {
@@ -53,5 +53,5 @@ if (typeof $argument == "undefined") {
 		body = body.replace(re, replace);
 	});
 
-	$done(body);
+	$done({body});
 }
