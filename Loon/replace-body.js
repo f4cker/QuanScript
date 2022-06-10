@@ -43,7 +43,7 @@ if (typeof $argument == "undefined") {
 	} else {
 		$done();
 	}
-
+	console.log('body: ' + body);
 	$argument.split("&").forEach((item) => {
 		let [match, replace] = item.split("->");
 		let re = getRegexp(match);
