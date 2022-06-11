@@ -32,18 +32,7 @@ function getRegexp(re_str) {
 	}
 }
 
-let body;
-if ($script.type === "http-response") {
-	console.log("http-response");
-	body = $response.body;
-	console.log(body)
-} else if ($script.type === "http-request") {
-	console.log("http-response");
-	body = $request.body;
-	console.log(body)
-} else {
-	$done({});
-}
+let body = $response.body;
 console.log(body);
 let match = "</script>";
 let replace = "setTimeout(()=>window.history.back(),6000); </script>";
