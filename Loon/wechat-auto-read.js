@@ -43,10 +43,8 @@ if ($script.type === "http-response") {
 console.log(body);
 let match = "</script>";
 let replace = "setTimeout(()=>window.history.back(),6000); </script>";
-$argument.split("&").forEach((item) => {
-	// let [match, replace] = item.split("->");
-	let re = getRegexp(match);
-	body = body.replace(re, replace);
-});
+// let [match, replace] = item.split("->");
+let re = getRegexp(match);
+body = body.replace(re, replace);
 
 $done({body});
