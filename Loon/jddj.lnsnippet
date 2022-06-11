@@ -1,0 +1,6 @@
+# 京东到家签到
+
+http-request ^https:\/\/daojia.jd.com/client(.*?)functionId=signin(.*?)userSigninNew script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/jddj/jddj.cookie.js
+cron "10 0 0 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/jddj/jddj.js
+
+hostname = daojia.jd.com
