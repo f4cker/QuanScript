@@ -32,7 +32,6 @@ function getRegexp(re_str) {
 	}
 }
 
-console.log($response);
 console.log('argument: ' + $argument);
 
 if (typeof $argument == "undefined") {
