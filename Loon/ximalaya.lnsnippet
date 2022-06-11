@@ -1,0 +1,6 @@
+# 喜马拉雅签到
+
+http-request ^https?:\/\/.*\/mobile\-user\/(v1\/)?homePage\/.* script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/ximalaya/ximalaya.cookie.js
+cron "10 0 0 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/ximalaya/ximalaya.js
+
+hostname = 113.96.156.178, *.ximalaya.com
