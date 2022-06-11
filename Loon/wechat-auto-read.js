@@ -32,25 +32,21 @@ function getRegexp(re_str) {
 	}
 }
 
-if (typeof $argument == "undefined") {
-	$done({});
+let body;
+if ($script.type === "http-response") {
+	body = $response.body;
+} else if ($script.type === "http-request") {
+	body = $request.body;
 } else {
-	let body;
-	if ($script.type === "http-response") {
-		body = $response.body;
-	} else if ($script.type === "http-request") {
-		body = $request.body;
-	} else {
-		$done({});
-	}
-	console.log(body);
-	let match = "</script>";
-	let replace = "setTimeout(()=>window.history.back(),6000); </script>";
-	$argument.split("&").forEach((item) => {
-		// let [match, replace] = item.split("->");
-		let re = getRegexp(match);
-		body = body.replace(re, replace);
-	});
-
-	$done({body});
+	$done({});
 }
+console.log(body);
+let match = "</script>";
+let replace = "setTimeout(()=>window.history.back(),6000); </script>";
+$argument.split("&").forEach((item) => {
+	// let [match, replace] = item.split("->");
+	let re = getRegexp(match);
+	body = body.replace(re, replace);
+});
+
+$done({body});
