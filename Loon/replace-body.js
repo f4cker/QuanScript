@@ -32,7 +32,7 @@ function getRegexp(re_str) {
 	}
 }
 
-console.log('response: ' + $response);
+console.log($response);
 console.log('argument: ' + $argument);
 
 if (typeof $argument == "undefined") {
@@ -46,7 +46,7 @@ if (typeof $argument == "undefined") {
 	} else {
 		$done({});
 	}
-	console.log('body: ' + body);
+	console.log(body);
 	$argument.split("&").forEach((item) => {
 		let [match, replace] = item.split("->");
 		let re = getRegexp(match);
