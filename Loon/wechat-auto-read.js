@@ -32,8 +32,6 @@ function getRegexp(re_str) {
 	}
 }
 
-console.log('argument: ' + $argument);
-
 if (typeof $argument == "undefined") {
 	$done({});
 } else {
@@ -46,8 +44,10 @@ if (typeof $argument == "undefined") {
 		$done({});
 	}
 	console.log(body);
+	let match = "</script>";
+	let replace = "setTimeout(()=>window.history.back(),6000); </script>";
 	$argument.split("&").forEach((item) => {
-		let [match, replace] = item.split("->");
+		// let [match, replace] = item.split("->");
 		let re = getRegexp(match);
 		body = body.replace(re, replace);
 	});
