@@ -1,4 +1,4 @@
-#!name= Loon_TF_Download
+#!name= TestFlightDownload
 #!desc= 该脚本订阅仅适用于Loon, 用于更新TestFlight App时, 提示"APP不可用"问题. 解除区域限制.
 
 [General]
