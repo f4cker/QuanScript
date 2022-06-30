@@ -6,7 +6,7 @@
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/WeChat.png
 
 [Script]
-http-response ^https?://mp\.weixin\.qq\.com/s.+? script-path=https://raw.githubusercontent.com/f4cker/QuanScript/master/Loon/wechat-auto-read.js, requires-body=true, tag=WeChat Auto Read, argument=
+http-response ^https?://mp\.weixin\.qq\.com/s\?.* script-path=https://github.com/ddgksf2013/Cuttlefish/raw/master/Script/wechat_auto_read.js, requires-body=true, timeout=10, tag=微信自动阅读（羊毛）
 
 [MITM]
 hostname = mp.weixin.qq.com
