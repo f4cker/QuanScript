@@ -1,3 +1,10 @@
+#!name=途虎养车
+#!desc=途虎养车签到
+#!author=Layoute
+#!homepage=https://github.com/f4cker
+#!manual=https://github.com/f4cker/QuanScript
+#!icon=https://raw.githubusercontent.com/FoKit/Scripts/main/images/tuhu.png
+
 [MITM]
 hostname = api.tuhu.cn
 
