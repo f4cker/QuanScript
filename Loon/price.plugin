@@ -1,0 +1,21 @@
+#!name=京东淘宝比价
+#!desc=京东淘宝比价
+#!author=zwf234
+#!homepage=https://github.com/zwf234
+#!manual=https://github.com/f4cker/QuanScript
+#!icon=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png
+
+[Script]
+
+# 京东比价
+#比价信息显示在商品下方
+http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
+
+#淘宝比价
+#历史价格在“保障”中显示，需要点击“保障”才能看到，和京东不一样
+# “保障”显示在商品下方
+http-request ^http://.+/amdc/mobileDispatch requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js
+http-response ^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js
+
+[MITM]
+hostname = api.m.jd.com, trade-acs.m.taobao.com
