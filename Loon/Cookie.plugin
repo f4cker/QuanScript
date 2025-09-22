@@ -32,9 +32,6 @@ http-request ^https:\/\/i.meituan.com\/evolve\/signin\/signpost\/ script-path=ht
 # 获取雀巢会员俱乐部签到需要的各项参数
 http-request ^https:\/\/crm.nestlechinese.com\/openapi\/pointsservice\/api\/Points\/getuserbalance script-path=https://gist.githubusercontent.com/Sliverkiss/f533ada8d658a0cbbe4b2e791c3b0ac8/raw/be3d9b74fe1cde69e6d39b599e5526110c996958/nestle.js, timeout=60, tag=nestle
 
-# 获取自动加入 TestFlight需要的各项参数
-http-request ^https:\/\/testflight\.apple\.com\/v3\/accounts\/.*\/ru\/([^\/]+)(?!\/accept)$ script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/TF_appIds.js, timeout=60, tag=TF_appIds
-
 # 获取海信爱家签到需要的各项参数
 http-request ^https:\/\/sweixin\.hisense\.com\/ecrp\/member\/initMember script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/Hisense.js, timeout=60, tag=Hisense
 
@@ -100,4 +97,4 @@ http-request ^https://example.com/? script-path=https://raw.githubusercontent.co
 http-response ^https:\/\/(m5(|-zb)|dache)\.amap\.com\/(ws\/yuece\/(act|openapi\/activity\/current)\/query|common\/(alipaymini|wxmini)\?_ENCRYPT=) script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, requires-body=true, timeout=60, tag=ampDache
 
 [MITM]
-hostname = music.163.com, mvip.midea.cn, app.hbooker.com, wx.10099.com.cn, api.weibo.cn, passport.iqiyi.com, apis.folidaymall.com, game.dominos.com.cn, yunbusiness.ccb.com, i.meituan.com, crm.nestlechinese.com, testflight.apple.com, sweixin.hisense.com, cps.hisense.com, auth.alipan.com, auth.aliyundrive.com, zxcstxt.com, api.hellobike.com, mall.meituan.com, sytgate.jslife.com.cn, hweb-personalcenter.huazhu.com, dm.yeemiao.com, api.tuhu.cn, qmwebapi.qmai.cn, webapi.qmai.cn, api.cloud.189.cn, api-ipv6.app.acfun.cn, *.acfun.cn, *.app.acfun.cn, *.xbiao.com, miniapp.yaduo.com, yuchen.tonghuaios.com, ios.songshuyouxi.com, as.hypergryph.com, zonai.skland.com, bbs-api.mihoyo.com, api-takumi.mihoyo.com, example.com, *.amap.com
+hostname = music.163.com, mvip.midea.cn, app.hbooker.com, wx.10099.com.cn, api.weibo.cn, passport.iqiyi.com, apis.folidaymall.com, game.dominos.com.cn, yunbusiness.ccb.com, i.meituan.com, crm.nestlechinese.com, sweixin.hisense.com, cps.hisense.com, auth.alipan.com, auth.aliyundrive.com, zxcstxt.com, api.hellobike.com, mall.meituan.com, sytgate.jslife.com.cn, hweb-personalcenter.huazhu.com, dm.yeemiao.com, api.tuhu.cn, qmwebapi.qmai.cn, webapi.qmai.cn, api.cloud.189.cn, api-ipv6.app.acfun.cn, *.acfun.cn, *.app.acfun.cn, *.xbiao.com, miniapp.yaduo.com, yuchen.tonghuaios.com, ios.songshuyouxi.com, as.hypergryph.com, zonai.skland.com, bbs-api.mihoyo.com, api-takumi.mihoyo.com, example.com, *.amap.com
