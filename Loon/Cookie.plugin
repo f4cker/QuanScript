@@ -11,9 +11,6 @@ http-request ^https?:\/\/music\.163\.com\/weapi\/cloudbean\/records\/incomes scr
 # 获取美的会员签到需要的各项参数
 http-request ^https:\/\/mvip.midea.cn\/next\/mucuserinfo\/getmucuserinfo script-path=https://gist.githubusercontent.com/Sliverkiss/3c0239a09cbe381c572a826a5caf5621/raw/midea.js, timeout=60, tag=midea
 
-# 5 0 * * * https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/manmanbuy/manmanbuy_checkin.js, tag=慢慢买_每日签到, enabled=true
-http-request ^https?:\/\/apph5\.manmanbuy\.com\/taolijin\/(login.aspx|logserver.aspx) script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/manmanbuy/manmanbuy_checkin.js, requires-body=true, timeout=60, tag=manmanbuy_checkin
-
 # 获取刺猬猫签到需要的各项参数
 http-request ^https:\/\/app\.hbooker\.com\/task\/get_all_task_list script-path=https://gist.githubusercontent.com/Sliverkiss/30fdcccce0b9ea6f248e49adf3aa8ea9/raw/hbooker.js, requires-body=true, timeout=60, tag=hbooker
 
@@ -43,16 +40,6 @@ http-request ^https:\/\/sweixin\.hisense\.com\/ecrp\/member\/initMember script-p
 
 http-request ^https:\/\/cps\.hisense\.com\/customerAth\/activity-manage\/activityUser\/(participate|noLoginCheck) script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/Hisense.js, requires-body=true, timeout=60, tag=Hisense
 
-# 百度贴吧每日自动签到
-http-request ^https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js, timeout=60, tag=tieba_signin
-
-http-request ^https?:\/\/c\.tieba\.baidu\.com\/c\/s\/channelIconConfig script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js, timeout=60, tag=tieba_signin
-
-http-request ^https?:\/\/tiebac\.baidu\.com\/c\/u\/follow\/getFoldedMessageUserInfo script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js, timeout=60, tag=tieba_signin
-
-# 获取什么值得买任务需要的各项参数
-http-request ^https?:\/\/user-api\.smzdm\.com\/checkin$ script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js, timeout=60, tag=smzdm_daily
-
 # 获取阿里云盘签到需要的各项参数
 http-request ^https:\/\/(auth|aliyundrive)\.alipan\.com\/v2\/account\/token script-path=https://gist.githubusercontent.com/Sliverkiss/33800a98dcd029ba09f8b6fc6f0f5162/raw/aliyun.js, requires-body=true, timeout=60, tag=aliyun
 
@@ -77,19 +64,11 @@ http-request ^https?:\/\/dm\.yeemiao\.com\/common\/newmsg\/getUnReadTotalNum$ sc
 # 获取途虎养车签到需要的各项参数
 http-request https://api.tuhu.cn/User/GetInternalCenterInfo script-path=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Tuhyche.js, timeout=60, tag=Tuhyche
 
-# 获取霸王茶姬签到需要的各项参数
-http-request ^https:\/\/(webapi|qmwebapi)\.qmai\.cn\/web\/(catering|catering2-apiserver)\/crm\/points-info script-path=https://gist.githubusercontent.com/Sliverkiss/4984f7f34d6df8bcdd1e13ecac4bba51/raw/bwcj.js, timeout=60, tag=bwcj
-
 # 获取天翼云盘签到需要的各项参数
 http-request ^https:\/\/api\.cloud\.189\.cn\/mkt\/userSign\.action? script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/ty.cookie.js, timeout=60, tag=ty.cookie
 
 # 获取AcFun签到需要的各项参数
 http-request ^https?:\/\/api-ipv6\.app\.acfun\.cn\/rest\/app\/user\/(signIn|hasSignedIn|getSignInInfos) script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/acfun.cookie.js, timeout=60, tag=acfun.cookie
-
-# 获取起点读书任务需要的各项参数
-http-request https\:\/\/h5\.if\.qidian\.com\/argus\/api\/v1\/video\/adv\/finishWatch script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/qidian/qidian.cookie.js, requires-body=true, timeout=60, tag=qidian.cookie
-
-http-response https\:\/\/h5\.if\.qidian\.com\/argus\/api\/v1\/video\/adv\/mainPage script-path=https://raw.githubusercontent.com/MCdasheng/QuantumultX/main/Scripts/myScripts/qidian/qidian.taskId.js, requires-body=true, timeout=60, tag=qidian.taskId
 
 # 获取腕表之家签到需要的各项参数
 http-request ^https:\/\/\w+\.xbiao\.com\/apps\/\w+/.+\/home\/center/$ script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/wbzj.js, timeout=60, tag=wbzj
@@ -121,4 +100,4 @@ http-request ^https://example.com/? script-path=https://raw.githubusercontent.co
 http-response ^https:\/\/(m5(|-zb)|dache)\.amap\.com\/(ws\/yuece\/(act|openapi\/activity\/current)\/query|common\/(alipaymini|wxmini)\?_ENCRYPT=) script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/ampDache.js, requires-body=true, timeout=60, tag=ampDache
 
 [MITM]
-hostname = music.163.com, mvip.midea.cn, apph5.manmanbuy.com, app.hbooker.com, wx.10099.com.cn, api.weibo.cn, passport.iqiyi.com, apis.folidaymall.com, game.dominos.com.cn, yunbusiness.ccb.com, i.meituan.com, crm.nestlechinese.com, testflight.apple.com, sweixin.hisense.com, cps.hisense.com, c.tieba.baidu.com, tiebac.baidu.com, user-api.smzdm.com, auth.alipan.com, auth.aliyundrive.com, zxcstxt.com, api.hellobike.com, mall.meituan.com, sytgate.jslife.com.cn, hweb-personalcenter.huazhu.com, dm.yeemiao.com, api.tuhu.cn, qmwebapi.qmai.cn, webapi.qmai.cn, api.cloud.189.cn, api-ipv6.app.acfun.cn, *.acfun.cn, *.app.acfun.cn, h5.if.qidian.com, *.xbiao.com, miniapp.yaduo.com, yuchen.tonghuaios.com, ios.songshuyouxi.com, as.hypergryph.com, zonai.skland.com, bbs-api.mihoyo.com, api-takumi.mihoyo.com, example.com, *.amap.com
+hostname = music.163.com, mvip.midea.cn, app.hbooker.com, wx.10099.com.cn, api.weibo.cn, passport.iqiyi.com, apis.folidaymall.com, game.dominos.com.cn, yunbusiness.ccb.com, i.meituan.com, crm.nestlechinese.com, testflight.apple.com, sweixin.hisense.com, cps.hisense.com, auth.alipan.com, auth.aliyundrive.com, zxcstxt.com, api.hellobike.com, mall.meituan.com, sytgate.jslife.com.cn, hweb-personalcenter.huazhu.com, dm.yeemiao.com, api.tuhu.cn, qmwebapi.qmai.cn, webapi.qmai.cn, api.cloud.189.cn, api-ipv6.app.acfun.cn, *.acfun.cn, *.app.acfun.cn, *.xbiao.com, miniapp.yaduo.com, yuchen.tonghuaios.com, ios.songshuyouxi.com, as.hypergryph.com, zonai.skland.com, bbs-api.mihoyo.com, api-takumi.mihoyo.com, example.com, *.amap.com
